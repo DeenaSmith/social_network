@@ -1,8 +1,9 @@
 
-const { TopologyDescription } = require('mongodb');
 const { Schema, model, Types } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 
+//Acts as a reaction to the thought/comment schema
 const ReactionSchema = new Schema(
     {
         reactionId: {
