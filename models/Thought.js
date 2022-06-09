@@ -1,8 +1,35 @@
 
+const { TopologyDescription } = require('mongodb');
 const { Schema, model, Types } = require('mongoose');
 
 
-
+const ReactionSchema = new Schema(
+    {
+        reactionId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId()
+        },
+        reactionBody: {
+            type: string,
+            required: 'Provide a reaction.',
+            maxlength: 280
+        },
+        username: {
+            type: string,
+            required: 'Enter a username.'
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: createdAtVal => dateFormat(createdAtVal)
+        }
+    },
+    {
+        toJSON: {
+            getters: true
+        }
+    }
+);
 
 
 
