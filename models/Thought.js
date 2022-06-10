@@ -11,12 +11,12 @@ const ReactionSchema = new Schema(
             default: () => new Types.ObjectId()
         },
         reactionBody: {
-            type: string,
+            type: String,
             required: 'Provide a reaction.',
             maxlength: 280
         },
         username: {
-            type: string,
+            type: String,
             required: 'Enter a username.'
         },
         createdAt: {
@@ -49,7 +49,7 @@ const ThoughtSchema = new Schema(
             get: createdAtVal => dateFormat(createdAtVal)
         },
         username: {
-            type: string,
+            type: String,
             required: 'Username required.'
         },
         // Validate data for a reaction

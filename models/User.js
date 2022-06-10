@@ -5,13 +5,13 @@ const { Schema, model } = require('mongoose');
 const UserSchema = new Schema(
     {
         username: {
-            type: string,
+            type: String,
             unique: true,
             required: 'Enter your username.',
             trim: true
         },
         email: {
-            type: string, 
+            type: String, 
             required: 'Enter your email.',
             unique: true
         },
