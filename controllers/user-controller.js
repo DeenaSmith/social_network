@@ -21,6 +21,7 @@ const userController = {
                 res.sendStatus(400);
             });
     },
+    // create user
     createUser({ body }, res) {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
@@ -37,6 +38,7 @@ const userController = {
             })
             .catch(err => res.json(err));
     },
+    // delete user
     deleteUser({ params }, res) {
         User.findOneAndDelete({ _id: params.id })
             .then(dbUserData => {
@@ -61,6 +63,7 @@ const userController = {
             })
             .catch(err => res.json(err));
     },
+    // add friend
     addFriend({ params }, res) {
         // add friend to user's friends list
         User.findOneAndUpdate(
@@ -92,6 +95,7 @@ const userController = {
             })
             .catch(err => res.json(err));
     },
+    //delete friend
     deleteFriend({ params }, res) {
         User.findOneAndUpdate(
             { _id: params.id },
